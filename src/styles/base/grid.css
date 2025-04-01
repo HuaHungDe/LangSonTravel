@@ -1,0 +1,48 @@
+.grid {
+    width: 100%;
+}
+
+.grid.wide {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid__container {
+    --grid-columns: 6; /* Mặc định */
+    --grid-height: 400px; /* Mặc định */
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 1200px;
+    gap: 12px;
+    margin: auto;
+    grid-auto-flow: dense;
+}
+
+.grid__item {
+    grid-column: span var(--grid-columns);
+    height: var(--grid-height);
+    position: relative;
+}
+
+/* Grid-8-4: Hàng đầu tiên */
+.grid-8-4.grid__item:nth-child(-n+2) {
+    --grid-columns: 8;
+    --grid-height: 350px;
+}
+.grid-8-4.grid__item:nth-child(2) {
+    --grid-columns: 4;
+}
+
+/* Hàng thứ hai */
+.grid-8-4.grid__item:nth-child(n+3) {
+    --grid-columns: 4;
+    --grid-height: 250px;
+}
+
+
+/* Layout Grid-6 (Mỗi item chiếm 6 cột, cao 400px) */
+.grid-6 { --grid-columns: 6; --grid-height: 400px; }
+
+/* Layout Grid-3 (Mỗi item chiếm 4 cột, cao 300px) */
+.grid-3 { --grid-columns: 4; --grid-height: 300px; }

@@ -1,0 +1,11 @@
+/* import file css base */
+@import url('../styles/base/grid.css');
+@import url('../styles/base/reset.css');
+@import url('../styles/base/variables.css');
+@import url('../styles/base/global.css');
+
+
+/* import file css layouts */
+@import url('../styles/layouts/body.css');
+@import url('../styles/layouts/footer.css');
+@import url('../styles/layouts/header.css');
